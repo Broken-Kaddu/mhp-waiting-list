@@ -1,6 +1,5 @@
 import express from "express";
 import path from "path";
-import { createServer as createViteServer } from "vite";
 import { z } from "zod";
 import { waitlistSchema } from "./lib/validation/waitlist";
 import { submitToWaitlist } from "./lib/actions/waitlist";
@@ -132,6 +131,7 @@ app.post("/api/waitlist", async (req, res) => {
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
     console.log("Starting server in DEVELOPMENT mode with Vite Middleware.");
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -151,4 +151,8 @@ async function startServer() {
   });
 }
 
-startServer();
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
