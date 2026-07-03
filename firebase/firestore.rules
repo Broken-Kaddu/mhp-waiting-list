@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Waitlist collection security rules
+    match /waitlist/{document} {
+      // Complete lockdown on client side: reads and writes must go through the Admin SDK server-side
+      allow read, write: if false;
+    }
+
+    // Default catch-all rules prepping for future Admin Authentication/Dashboard
+    match /{document=**} {
+      allow read, write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}

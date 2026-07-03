@@ -1,0 +1,106 @@
+{
+  "entities": {
+    "WaitlistEntry": {
+      "title": "WaitlistEntry",
+      "description": "A single waitlist submission from the MHP landing page",
+      "type": "object",
+      "properties": {
+        "fullName": {
+          "type": "string",
+          "description": "The user's full name"
+        },
+        "companyName": {
+          "type": "string",
+          "description": "The user's company or organization name"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "The normalized and validated work email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The user's primary contact phone number"
+        },
+        "city": {
+          "type": "string",
+          "description": "Selected or entered city of operation"
+        },
+        "consent": {
+          "type": "boolean",
+          "description": "User's consent for communication"
+        },
+        "source": {
+          "type": "string",
+          "enum": ["website"],
+          "description": "Submission origin identifier"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["new"],
+          "description": "Workflow status of the lead"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of creation"
+        },
+        "activeProjects": {
+          "type": "integer",
+          "description": "Number of active projects (optional)"
+        },
+        "companySize": {
+          "type": "string",
+          "description": "Size category of the builder (optional)"
+        },
+        "currentSoftware": {
+          "type": "string",
+          "description": "Current software tool used (optional)"
+        },
+        "biggestChallenge": {
+          "type": "string",
+          "description": "The biggest operational bottleneck (optional)"
+        },
+        "utmSource": {
+          "type": "string",
+          "description": "Campaign source metadata"
+        },
+        "utmMedium": {
+          "type": "string",
+          "description": "Campaign medium metadata"
+        },
+        "utmCampaign": {
+          "type": "string",
+          "description": "Campaign name metadata"
+        },
+        "utmTerm": {
+          "type": "string",
+          "description": "Campaign search term metadata"
+        },
+        "utmContent": {
+          "type": "string",
+          "description": "Campaign content snippet"
+        },
+        "referrer": {
+          "type": "string",
+          "description": "Browser referral source"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "Client IP address captured server-side"
+        },
+        "userAgent": {
+          "type": "string",
+          "description": "Client browser user agent captured server-side"
+        }
+      },
+      "required": ["fullName", "companyName", "email", "phone", "city", "consent", "source", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "waitlist/{entryId}": {
+      "schema": "WaitlistEntry",
+      "description": "The collection containing all secured, server-side validated waitlist signups"
+    }
+  }
+}

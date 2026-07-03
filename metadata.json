@@ -1,0 +1,6 @@
+{
+  "name": "MHP Waitlist Landing Page",
+  "description": "A premium waitlist and interactive dashboard landing page for MHP, an AI Operating System for Indian construction companies built on WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

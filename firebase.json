@@ -1,0 +1,9 @@
+{
+  "firestore": [
+    {
+      "database": "ai-studio-mhpwaitlistlandi-f4425cc4-3107-4607-aa27-cba9caa91c8a",
+      "rules": "firestore.rules",
+      "indexes": "firebase/firestore.indexes.json"
+    }
+  ]
+}

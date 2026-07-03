@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global safety net - Default deny all direct client reads and writes.
+    // All Firestore interactions are funneled through secure server-side API routes.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
