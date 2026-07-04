@@ -1,6 +1,5 @@
 import { initializeApp, getApps, cert, App } from "firebase-admin/app";
 import { getFirestore, Firestore } from "firebase-admin/firestore";
-import { getAuth, Auth } from "firebase-admin/auth";
 import { readFileSync } from "fs";
 import { join } from "path";
 
@@ -58,4 +57,3 @@ if (projectId && clientEmail && privateKey) {
 }
 
 export const adminDb: Firestore | null = adminApp ? getFirestore(adminApp, firebaseConfig.firestoreDatabaseId) : null;
-export const adminAuth: Auth | null = adminApp ? getAuth(adminApp) : null;
