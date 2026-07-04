@@ -34,7 +34,7 @@ import WaitlistForm from "./components/WaitlistForm";
 import MultilingualShowcase from "./components/MultilingualShowcase";
 import SecurityPrivacy from "./components/SecurityPrivacy";
 import FAQ from "./components/FAQ";
-import { TESTIMONIALS } from "./data";
+import { INDUSTRY_REFERENCES } from "./data";
 import { trackEvent, initScrollDepthTracking } from "../lib/firebase/analytics";
 
 export default function App() {
@@ -550,37 +550,53 @@ export default function App() {
         </div>
       </section>
 
-      {/* TESTIMONIALS SECTION */}
+      {/* INDUSTRY RESEARCH & CASE FOR MESSAGING-FIRST TECH */}
       <section className="py-12 md:py-28 bg-white/5 border-t border-white/5 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
           <div className="max-w-3xl text-center mx-auto mb-10 md:mb-16">
-            <span className="font-mono text-[10px] md:text-xs text-brand-orange tracking-widest uppercase">FOUNDING CUSTOMER VOICE</span>
+            <span className="font-mono text-[10px] md:text-xs text-brand-orange tracking-widest uppercase">INDUSTRY INSIGHTS & EXPERT CONSENSUS</span>
             <h2 className="text-2xl md:text-4xl font-black font-display text-white mt-1 leading-tight">
-              Endorsed by Top Indian Builders
+              The Reality of Construction Site Operations
             </h2>
-            <p className="text-slate-400 text-xs md:text-sm mt-2 max-w-lg mx-auto leading-relaxed">
-              Read how developers managing multi-crore real estate portfolios rely on MHP to prevent margin leakages.
+            <p className="text-slate-400 text-xs md:text-sm mt-2 max-w-xl mx-auto leading-relaxed">
+              Global research and industry studies highlight why traditional, heavy ERPs fail to gain traction on-site and why simple, messaging-first solutions are essential.
             </p>
           </div>
 
-          {/* Testimonial Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-            {TESTIMONIALS.map((t, idx) => (
-              <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col justify-between relative hover:border-white/20 transition-all">
-                <blockquote className="text-xs italic text-slate-300 leading-relaxed">
-                  "{t.quote}"
-                </blockquote>
-                <div className="flex items-center space-x-3 mt-4 pt-3 border-t border-white/5">
-                  <div className={`w-9 h-9 rounded-full ${t.avatarColor} flex items-center justify-center font-bold font-display text-slate-900 text-xs shrink-0`}>
-                    {t.author.split(" ").map(w => w[0]).join("")}
+          {/* Reference Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {INDUSTRY_REFERENCES.map((ref, idx) => (
+              <div key={idx} className="bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col justify-between relative hover:border-white/20 transition-all duration-300 group">
+                <div>
+                  {/* Top Header Row with Stat */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5 pb-4 border-b border-white/5">
+                    <div>
+                      <span className="text-[10px] font-mono tracking-wider text-slate-500 uppercase">{ref.metric}</span>
+                      <h4 className="text-sm font-bold text-slate-200 mt-0.5">{ref.source}</h4>
+                    </div>
+                    <div className="shrink-0 text-left sm:text-right">
+                      <div className="text-3xl md:text-4xl font-black font-display text-brand-orange leading-none">{ref.stat}</div>
+                      <div className="text-[9px] text-slate-400 font-mono mt-1">{ref.statLabel}</div>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="text-xs font-bold text-slate-200">{t.author}</h5>
-                    <p className="text-[9px] text-slate-400 mt-0.5">{t.role}</p>
-                    <p className="text-[8px] text-brand-orange font-mono uppercase mt-0.5">{t.location}</p>
+
+                  {/* Quote Body */}
+                  <blockquote className="text-xs md:text-sm italic text-slate-300 leading-relaxed font-sans mb-6 relative pl-4">
+                    <span className="text-3xl font-serif text-brand-orange/20 absolute -top-4 left-0 select-none">“</span>
+                    <span className="relative z-10">{ref.quote}</span>
+                  </blockquote>
+                </div>
+
+                {/* Footer Section with Publication */}
+                <div className="pt-4 border-t border-white/5 flex items-center justify-between gap-4 mt-auto">
+                  <div className="text-[10px] text-slate-400">
+                    <span className="font-semibold text-slate-300">Publication:</span> {ref.report}
                   </div>
+                  <span className={`text-[9px] font-mono px-2 py-0.5 rounded border ${ref.badgeColor} shrink-0`}>
+                    Verified Insight
+                  </span>
                 </div>
               </div>
             ))}

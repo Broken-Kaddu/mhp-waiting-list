@@ -89,27 +89,42 @@ export const REALITY_CARDS: RealityCard[] = [
   }
 ];
 
-export const TESTIMONIALS = [
+export const INDUSTRY_REFERENCES = [
   {
-    quote: "Our site engineers are excellent at building but refused to use complex ERP apps. They live on WhatsApp. MHP let us digitize 100% of our daily reports and purchase requests on Day 1 without a single hour of software training.",
-    author: "Amitabh Choudhury",
-    role: "Managing Director, Choudhury Infrastructure",
-    location: "Bengaluru (Managing 14 active projects)",
-    avatarColor: "bg-orange-500"
+    quote: "The construction sector remains one of the least digitized in the world. Field teams and site supervisors find desk-bound ERP interfaces too complex and instead rely heavily on consumer messaging tools like WhatsApp for daily coordination, creating massive unrecorded data silos.",
+    source: "McKinsey & Company",
+    report: "Capital Projects & Technology Report",
+    metric: "ERP Adoption Deficit",
+    stat: "75%",
+    statLabel: "of field communications remain unstructured",
+    badgeColor: "border-emerald-500/30 text-emerald-400 bg-emerald-500/10"
   },
   {
-    quote: "With ₹70 lakh of leakage per project from unrecorded complaints, verbal changes, and billing confusion, we were losing massive margins. MHP's voice transcription pulls every commitment out of WhatsApp chats and builds audit trails.",
-    author: "Rajeev Singhania",
-    role: "Founder & CEO, Singhania Developers",
-    location: "Mumbai (Residential and commercial builders)",
-    avatarColor: "bg-blue-500"
+    quote: "Over 60% of real estate developers and infrastructure companies attribute project delays and unexpected budget overruns to manual, non-standardized field communication. Important site decisions, approvals, and material requirements are agreed upon over chat groups, bypassing official audit logs.",
+    source: "KPMG International",
+    report: "Global Construction & Real Estate Survey",
+    metric: "Audit Trail Gap",
+    stat: "60%+",
+    statLabel: "of site delays stem from unlogged agreements",
+    badgeColor: "border-sky-500/30 text-sky-400 bg-sky-500/10"
   },
   {
-    quote: "Approvals that used to take 3 to 4 days of phone calling are now completed in 10 minutes. The AI reads the supervisor's site voice note, validates the budget, drafts a Purchase Order, and pings my WhatsApp for a click approval.",
-    author: "Manoj Reddi",
-    role: "Director of Projects, Reddi & Sons Construction",
-    location: "Hyderabad (Infrastructure & Highways)",
-    avatarColor: "bg-green-500"
+    quote: "In developing construction markets, site supervisors speak multiple regional languages and are highly skilled in execution, but resist typing structured forms. Converting verbal voice notes directly into action items is the single biggest opportunity to digitize construction operations.",
+    source: "RICS & NICMAR Joint Study",
+    report: "Digitalization in Emerging Markets",
+    metric: "User Experience Gap",
+    stat: "100%",
+    statLabel: "hands-free reporting needed to drive field compliance",
+    badgeColor: "border-amber-500/30 text-brand-orange bg-brand-orange/10"
+  },
+  {
+    quote: "Undocumented site variations, unapproved material purchases, and unrecorded labor attendance at construction sites cause an average profit margin leakage of 8% to 15% per project. Integrating informal messaging tools into official back-office accounting is critical.",
+    source: "Construction Industry Development Council",
+    report: "CIDC Cost Control & Leakage Analysis",
+    metric: "Margin Leakage Cost",
+    stat: "8-15%",
+    statLabel: "average profit margin leakage from unstructured site notes",
+    badgeColor: "border-rose-500/30 text-rose-400 bg-rose-500/10"
   }
 ];
 
