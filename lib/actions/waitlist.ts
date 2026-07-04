@@ -1,6 +1,6 @@
-import { adminDb } from "../firebase/admin";
+import { adminDb } from "../firebase/admin.js";
 import { FieldValue } from "firebase-admin/firestore";
-import { WaitlistInput } from "../validation/waitlist";
+import { WaitlistInput } from "../validation/waitlist.js";
 
 export interface SubmitResult {
   success: boolean;

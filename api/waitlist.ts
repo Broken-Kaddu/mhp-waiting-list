@@ -1,5 +1,5 @@
-import { waitlistSchema } from "../lib/validation/waitlist";
-import { submitToWaitlist } from "../lib/actions/waitlist";
+import { waitlistSchema } from "../lib/validation/waitlist.js";
+import { submitToWaitlist } from "../lib/actions/waitlist.js";
 import { z } from "zod";
 
 // Simple in-memory rate limiting for serverless instance (per container instance)

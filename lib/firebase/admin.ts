@@ -1,7 +1,18 @@
 import { initializeApp, getApps, cert, App } from "firebase-admin/app";
 import { getFirestore, Firestore } from "firebase-admin/firestore";
 import { getAuth, Auth } from "firebase-admin/auth";
-import firebaseConfig from "../../firebase-applet-config.json";
+import { readFileSync } from "fs";
+import { join } from "path";
+
+// Safely read firebase-applet-config.json using fs to prevent ESM compile/runtime issues on Vercel
+let firebaseConfig: any = {};
+try {
+  const configPath = join(process.cwd(), "firebase-applet-config.json");
+  const rawData = readFileSync(configPath, "utf8");
+  firebaseConfig = JSON.parse(rawData);
+} catch (err) {
+  // Silent fallback to prevent console clutter in production
+}
 
 const projectId = process.env.FIREBASE_PROJECT_ID;
 const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
